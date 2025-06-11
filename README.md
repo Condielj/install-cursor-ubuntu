@@ -55,6 +55,15 @@ rm -rf ~/.config/Cursor ~/.cache/Cursor
 /opt/cursor.appimage --no-sandbox
 ```
 
+### **💡 "`jq: command not found` (or similar) during install?**
+Make sure **jq** is installed—it's used to parse the download-URL JSON:
+```bash
+sudo apt install -y jq
+```
+After installing, re-run `./install_cursor.sh`.
+
+
+
 ---
 
 ## 📜 License  
