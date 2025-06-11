@@ -3,7 +3,9 @@
 # Cursor Installation Script for Ubuntu 24.04
 # Author: Abdul's Setup Script
 
-CURSOR_URL="https://downloader.cursor.sh/linux/appImage/x64"
+CURSOR_URL="$(curl -fsSL \
+  'https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable' \
+  | jq -r '.downloadUrl')"
 CURSOR_APPIMAGE_PATH="$HOME/Downloads/Cursor.AppImage"
 APPIMAGE_DEST="/opt/cursor.appimage"
 ICON_URL="https://raw.githubusercontent.com/rahuljangirwork/copmany-logos/refs/heads/main/cursor.png"
